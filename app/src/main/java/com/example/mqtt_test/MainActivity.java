@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         btn_light_connect.setOnClickListener(v -> {
             // 開始連線到 MQTT Broker
-            mqttHandler.connect("home/light");
+            mqttHandler.connect("nutc_e22_ithome_light");
         });
         btn_temperature_connect.setOnClickListener(v -> {
             // 開始連線到 MQTT Broker
-            mqttHandler.connect("home/temperature");
+            mqttHandler.connect("nutc_e22_ithome_t_h");
         });
         // 設置連線完成的回調邏輯
         mqttHandler.setConnectionCallback(() -> {
@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
             btn_light_on.setOnClickListener(v -> {
                 // 連線成功後執行開燈的訊息發佈
                 MqttLightRequest request = new MqttLightRequest("LED123", "ON");
-                mqttHandler.publishLed("home/light", request);
+                mqttHandler.publishLed("nutc_e22_ithome_light", request);
             });
             btn_light_off.setOnClickListener(v -> {
                 // 連線成功後執行關燈的訊息發佈
                 MqttLightRequest request = new MqttLightRequest("LED123", "OFF");
-                mqttHandler.publishLed("home/light", request);
+                mqttHandler.publishLed("nutc_e22_ithome_light", request);
             });
         });
 

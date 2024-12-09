@@ -13,10 +13,10 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class MqttHandler {
-    private String brokerUrl = "wss://broker.hivemq.com:8884";
+    private String brokerUrl = "wss://broker.hivemq.com:8884"; // 公網設置
     private String clientId = MqttClient.generateClientId(); // 自動生成唯一 clientId
-    private String username = "nutc_imac_e22_ithome";
-    private String password = "00000000";
+    private String username = "nutc_imac_e22_ithome"; // user名稱
+    private String password = "00000000"; // mqtt密碼
     private String topic = "";
     public MqttClient client;
     private MqttListener mqttListener;
